@@ -5,15 +5,24 @@
         <meta charset="utf-8"/>
         <meta name="description" content="Jordi Bach Chrysalis Portafolio"/>
         <meta name="keywords" content="Chrysalis, Portafolio, Jordi Bach, bottzo"/>
-
     </head>
     <body>
         <header></header>
         <nav></nav>
         <h1>Chrysalis</h1>
         <p>Here is my contribution on the chrysalis project</p>
+        
+        <label><input type="checkbox" id="15">This is a checkbox</label>
+
         <h2>Final boss scene</h2>
-        <img src="Imgs/Boss/BossScene.JPG" alt="The scene with all effects">
+        <img src="Imgs/Boss/BossScene.JPG" alt="The scene with all effects" id="10">
+
+        <script>
+            let e = document.getElementById("15");
+            e.addEventListener("change", function () {
+                document.getElementById("10").style.visibility = (this.checked) ? "visible" : "hidden";
+            })
+        </script>
 
         <h2>Deferred renderer</h2>
         <img src="Imgs/Boss/BossBaseColor.JPG" alt="Base Color">
