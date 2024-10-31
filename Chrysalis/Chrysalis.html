@@ -34,7 +34,11 @@
         <img src="Imgs/Boss/BossPositions.JPG" alt="Boss positions">
 
         <h2>Volumetric Lighting</h2>
-        <img src="no volumetric" alt="boss no volumetric">
+        <label><input type="checkbox" id="volCheckBox" checked>Volumetric</label>
+        <img src="Imgs/Boss/BossScene.JPG" alt="Boss SSAO toggle" id="vol">
+        <script>
+            CheckBoxImage("volCheckBox", "vol", "Imgs/Boss/BossScene.JPG", "Imgs/Boss/BossNoVolumetric.JPG");
+        </script>
         <img src="Imgs/Boss/BossVolumetric.JPG" alt="Volumetric boss">
 
         <h2>Bloom</h2>
