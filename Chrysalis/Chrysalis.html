@@ -5,24 +5,25 @@
         <meta charset="utf-8"/>
         <meta name="description" content="Jordi Bach Chrysalis Portafolio"/>
         <meta name="keywords" content="Chrysalis, Portafolio, Jordi Bach, bottzo"/>
+        <script>
+            function CheckBoxImage(checkboxId, imageId, truePath, falsePath)
+            {
+                let e = document.getElementById(checkboxId);
+                e.addEventListener("change", function () {
+                let a = document.getElementById(imageId);
+                (this.checked) ? a.setAttribute("src", truePath) : a.setAttribute("src", falsePath);
+                });
+            }
+        </script>
     </head>
     <body>
         <header></header>
         <nav></nav>
         <h1>Chrysalis</h1>
         <p>Here is my contribution on the chrysalis project</p>
-        
-        <label><input type="checkbox" id="15">This is a checkbox</label>
 
         <h2>Final boss scene</h2>
         <img src="Imgs/Boss/BossScene.JPG" alt="The scene with all effects" id="10">
-
-        <script>
-            let e = document.getElementById("15");
-            e.addEventListener("change", function () {
-                document.getElementById("10").style.visibility = (this.checked) ? "visible" : "hidden";
-            })
-        </script>
 
         <h2>Deferred renderer</h2>
         <img src="Imgs/Boss/BossBaseColor.JPG" alt="Base Color">
@@ -37,24 +38,44 @@
         <img src="Imgs/Boss/BossVolumetric.JPG" alt="Volumetric boss">
 
         <h2>Bloom</h2>
-        <img src="Imgs/Boss/BossNoBloom.JPG" alt="Boss no Bloom">
+        <label><input type="checkbox" id="bloomCheckBox" checked>Bloom</label>
+        <img src="Imgs/Boss/BossScene.JPG" alt="Toggle image bloom and no bloom" id="bloom">
+        <script>
+            CheckBoxImage("bloomCheckBox", "bloom", "Imgs/Boss/BossScene.JPG", "Imgs/Boss/BossNoBloom.JPG");
+        </script>
         <h3>Blur</h3>
         <img src="Imgs/Boss/BossBlur.JPG" alt="Blured boss">
 
         <h2>Screen space ambient occlusion (SSAO)</h2>
+        <label><input type="checkbox" id="ssaoCheckBox" checked>SSAO</label>
+        <img src="Imgs/Boss/BossScene.JPG" alt="Boss SSAO toggle" id="ssao">
+        <script>
+            CheckBoxImage("ssaoCheckBox", "ssao", "Imgs/Boss/BossScene.JPG", "Imgs/Boss/BossNoSSAO.JPG");
+        </script>
         <img src="Imgs/Boss/SSAOBoss.JPG" alt="Boss SSAO">
-        <img src="Imgs/Boss/BossNoSSAO.JPG" alt="Boss no SSAO">
 
         <h2>Filmic tone mapping</h2>
-        <img src="Imgs/Boss/BossReinhard.JPG" alt="Boss Reinhard tonemapping">
-        <img src="Imgs/Boss/BossScene.JPG" alt="Boss ACES tonemapping">
+        <label id="toneMapLable"><input type="checkbox" id="toneMapCheckBox" checked>ACES tone mapping</label>
+        <img src="Imgs/Boss/BossScene.JPG" alt="Boss toneMap toggle" id="toneMap">
+        <script>
+            CheckBoxImage("toneMapCheckBox", "toneMap", "Imgs/Boss/BossScene.JPG", "Imgs/Boss/BossReinhard.JPG");
+            /*document.getElementById("toneMapCheckBox").addEventListener("change",function() {
+                let b = getElementById("toneMapLable");
+                b. = (b.checked) ? '<input type=\"checkbox\" id=\"toneMapCheckBox\" checked>ACES tone mapping' : 
+                "<input type=\"checkbox\" id=\"toneMapCheckBox\">Reinhard tone mapping";
+            })*/
+        </script>
 
         <h2>Height fog</h2>
         <img src="Imgs/Boss/BossHighFog.JPG" alt="Boss High Fog">
         <img src="Imgs/Boss/BossNoFog.JPG" alt="Boss no fog">
 
         <h2>IBL indirect lighting</h2>
-        <img src="Imgs/Boss/BossNoIBL.JPG" alt="Boss no IBL">
+        <label><input type="checkbox" id="iblCheckBox" checked>IBL indirect light</label>
+        <img src="Imgs/Boss/BossScene.JPG" alt="Boss IBL toggle" id="ibl">
+        <script>
+            CheckBoxImage("iblCheckBox", "ibl", "Imgs/Boss/BossScene.JPG", "Imgs/Boss/BossNoIBL.JPG");
+        </script>
 
         <h2>Dissolve vfx</h2>
         <img src="Imgs/Boss/BossDissolve.JPG" alt="Dissolve effect image">
